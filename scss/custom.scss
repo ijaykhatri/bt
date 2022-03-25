@@ -1,0 +1,584 @@
+@import "bulma/utilities/_mixins.scss";
+@import "bulma/utilities/_controls.scss";
+@import "bulma/utilities/_extends.scss";
+@import "bulma/components/_modal.scss";
+
+
+$fifa-gold: #d6b563;
+$fifa-black: #1a1a18;
+$color-gold: #b9a157;
+$color-red: #e8354d;
+
+:root {
+  --base-color: #8a1539;
+  --base-text-color: white;
+}
+
+body {
+  font-family: "poppins", "Roboto", Arial, Helvetica, sans-serif;
+}
+
+/* ******* */
+
+/* ******* */
+
+
+h1,
+h2,
+h3,
+h4,
+strong {
+  font-family: "poppins-bold", "Roboto", Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 12px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include desktop {
+    font-size: 24px;
+  }
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
+
+  @include desktop {
+    font-size: 0.7rem;
+  }
+}
+
+a {
+  &:hover {
+    color: red;
+  }
+}
+
+.bg-black {
+  background-color: #111111;
+  color: white;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.text-yellow {
+  color: #f1db15;
+}
+
+.text-right {
+  text-align: right;
+}
+
+button,
+.button {
+  padding: 0.5rem 3rem;
+  background-image: linear-gradient(to right, #8a1d2b, #f51934);
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  color: white;
+
+  &.medium {
+    font-size: 1rem;
+    padding: 0.4rem 1.5rem;
+
+  }
+
+  &.text-right {
+    display: inline-block;
+  }
+}
+
+
+/* ********************* 
+
+NAV
+
+********************* */
+
+#main-nav {
+  position: sticky;
+  top: 0;
+
+  .navbar-brand {
+    img {
+      max-height: 3.5rem;
+      padding-left: 1.5rem;
+
+      @include tablet {
+        max-height: 2.5rem;
+      }
+    }
+  }
+
+  background-color: #1d1d1b;
+
+  .navbar-menu {
+    .navbar-end {
+      @include tablet {
+        justify-content: right;
+        margin-left: auto;
+
+        a.navbar-item {
+          padding: 0 1em;
+          font-size: 0.7rem;
+
+          // text-decoration: white solid underline;
+          //  text-underline-offset: 0.7rem;
+          &:hover {
+            // color: $fifa-gold !important;
+            // text-decoration: $fifa-gold solid underline;
+          }
+        }
+      }
+    }
+  }
+
+  // background-color: #d6b563;
+
+  // @include tablet {
+  //   background-color: #8a1539;
+  // }
+
+  // @include desktop {
+  //   background-color: #1d1d1b;
+  // }
+}
+
+section {
+  display: relative;
+
+}
+
+.anchor {
+  position: absolute;
+  top: -2rem;
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+.modal {
+  display: none;
+
+  .modal-close::before {
+    width: 24%;
+  }
+}
+
+
+
+/* ******* 
+
+SECTION
+
+** **** */
+
+section {
+  position: relative;
+
+  // padding-bottom: 2rem;
+  .header {
+    text-align: center;
+    padding: 2rem 0.5rem;
+
+    @include tablet {
+      padding: 3rem 20%;
+    }
+  }
+
+  @include tablet {
+    .banner {
+      border: 1px solid yellow;
+      border-radius: 50rem;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60%;
+      max-width: 40rem;
+      transform: translate(8rem, 3rem);
+
+      img {
+        border-radius: 50rem;
+        transform: translate(-0.2rem, 1rem);
+        width: 100%;
+      }
+
+      &.banner-left {
+        border: 1px solid red;
+        left: 0;
+        transform: translate(-3rem, 3rem);
+      }
+
+      &.banner-potrait {
+        width: 33%;
+        max-width: 22rem;
+        border-radius: 5rem;
+        transform: translate(-1rem, 3rem);
+        bottom: 7rem;
+        right: -2rem;
+
+        img {
+          border-radius: 5rem;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    .banner-potrait {
+      display: none;
+    }
+  }
+}
+
+section#home,
+section#about {
+  position: relative;
+
+  @include tablet {
+    margin-bottom: 7rem;
+  }
+
+  .text {
+    padding: 2rem;
+    max-width: 35rem;
+  }
+}
+
+section#home {
+
+  h4,
+  p,
+  button,
+  .button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+#products {
+  .product-wrapper {
+    background-color: #f4f6fb;
+    padding-bottom: 3rem;
+  }
+}
+
+#testimonials {
+  overflow: hidden;
+  padding-left: 1rem;
+  padding-top: 2rem;
+
+  h3 {
+    padding-left: .5rem;
+  }
+
+  .item {
+    margin-top: 2rem;
+    background-color: #f4f6fb;
+    padding: 0 0 2rem 0;
+    width: 90%;
+
+    .thumb {
+      img {
+        transform: translate(2rem, 2rem);
+
+        @include mobile {
+          width: 4rem;
+        }
+      }
+    }
+
+    .text {
+      padding: 3rem 1rem 0 0;
+      position: relative;
+
+      @include desktop {
+        &::before {
+          position: absolute;
+          content: url("../images/quotes_icon.svg");
+          width: 1rem;
+          height: 1rem;
+          transform: translate(-1rem, -5rem) scale(0.8);
+        }
+      }
+    }
+
+    h5.text-right {
+      margin-top: 1rem;
+    }
+  }
+}
+
+#capabilites {
+  .bg-black {
+    padding-top: 2rem;
+    /// padding-bottom: 2rem;
+  }
+}
+
+#technologies {
+  padding-bottom: 3rem;
+}
+
+/* ******* 
+
+    CARDS
+
+
+** **** */
+
+.card {
+  background-color: transparent;
+  box-shadow: none;
+
+  h3,
+  h4,
+  p {
+    margin-bottom: 0.3rem;
+    padding: 0 5%;
+    text-align: center;
+  }
+
+  clear: both;
+
+  @include mobile {
+    padding: 1rem;
+
+    img {
+      float: left;
+      width: 30%;
+    }
+
+    h3,
+    h4,
+    p {
+      padding-left: 35%;
+      text-align: left;
+    }
+  }
+
+  @include tablet {
+    text-align: center;
+    padding-bottom: 2rem;
+
+    img {}
+  }
+}
+
+#technologies {
+  .thumb {
+    @include mobile {
+      float: left;
+      width: 30%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .card {
+    img {
+      background-color: white;
+      border-radius: 50%;
+    }
+  }
+}
+
+#capabilites {
+  .card {
+    .thumb {
+      @include mobile {
+        float: left;
+        width: 30%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @include tablet {
+        position: relative;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+
+        img {
+          width: 100%;
+          z-index: 2;
+          max-width: 200px;
+        }
+
+        &:before {
+          position: absolute;
+          content: " ";
+          display: block;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-color: white;
+          left: 25%;
+          top: 50%;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+#contact {
+  text-align: center;
+
+  details {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom: 3rem;
+    max-width: 30rem;
+
+    summary {
+      cursor: pointer;
+      background-color: #111111;
+      border-radius: 1rem;
+      color: white;
+    }
+  }
+}
+
+#contactForm {
+  .business-form {
+    padding: 2rem;
+  }
+
+  .columns {
+    max-width: 70rem;
+    margin: auto;
+  }
+
+  label,
+  input,
+  p {
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0.5rem;
+
+    font-size: 1rem;
+
+    @include tablet {
+      font-size: 0.7rem;
+    }
+  }
+
+  p {
+    font-weight: 700;
+  }
+
+
+  input[type="radio"i] {
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 0.2rem;
+    padding: initial;
+    border: initial;
+    width: auto;
+    float: left;
+    margin-left: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .text,
+  textarea {
+    // width: 80%;
+    // max-width: 800px;
+    line-height: 2em;
+    // font-size: 1em;
+    // padding: 0;
+  }
+
+  textarea {
+    min-height: 200px;
+    width: 100%;
+  }
+
+  .submit {
+    text-align: center;
+    margin-top: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.3em;
+    background-color: $color-red;
+    color: white;
+    font-size: 1rem;
+    width: 6rem;
+  }
+}
+
+footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .logo-bms {
+    max-width: 200px;
+    margin-top: 1rem;
+  }
+
+  .columns {
+    .column {
+      padding: 1rem 3rem;
+    }
+
+    img {
+      max-width: 50px;
+      max-height: 50px;
+      vertical-align: middle;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+
+#carousel-features {
+  .slider-navigation-previous,
+  .slider-navigation-next {
+    width: 2rem;
+    height: 2rem;
+    svg {
+      stroke: #111111;
+    }
+  }
+}
+
+.slider {
+  width: 100vw;
+  overflow: hidden;
+}
